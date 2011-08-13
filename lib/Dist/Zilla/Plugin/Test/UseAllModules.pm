@@ -5,14 +5,21 @@ use warnings;
 
 # ABSTRACT: Release tests making sure all MANIFEST'ed modules pass use_oK()
 
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002';    # VERSION
 
 use Moose;
 use namespace::autoclean;
 
 extends 'Dist::Zilla::Plugin::InlineFiles';
+with 'Dist::Zilla::Role::PrereqSource';
 
 __PACKAGE__->meta->make_immutable;
+
+sub register_prereqs {
+    shift->zilla->register_prereqs( { phase => 'test' },
+        'Test::UseAllModules' => 0 );
+    return;
+}
 
 1;
 
@@ -29,7 +36,7 @@ Dist::Zilla::Plugin::Test::UseAllModules - Release tests making sure all MANIFES
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
@@ -49,6 +56,8 @@ A basic L<Test::UseAllModules> test
 If a more sophisticated use of Test::UseAllModules is required, this plugin
 may not be for you. Please refer to the L<Test::UseAllModules> documentation
 for examples and more information.
+
+=for Pod::Coverage register_prereqs
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
 
@@ -158,9 +167,9 @@ The code is open to the world, and available for you to hack on. Please feel fre
 with it, or whatever. If you want to contribute patches, please send me a diff or prod me to pull
 from your repository :)
 
-L<http://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules>
+L<https://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules>
 
-  git clone http://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules
+  git clone https://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules.git
 
 =head1 AUTHOR
 
@@ -212,4 +221,3 @@ use strict;
 use Test::UseAllModules;
 
 BEGIN { all_uses_ok(); }
-

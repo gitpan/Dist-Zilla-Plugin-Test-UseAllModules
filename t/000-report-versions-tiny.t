@@ -49,6 +49,7 @@ sub pmver {
 }
 
 eval { $v .= pmver('Dist::Zilla::Plugin::InlineFiles','any version') };
+eval { $v .= pmver('Dist::Zilla::Role::PrereqSource','any version') };
 eval { $v .= pmver('English','any version') };
 eval { $v .= pmver('ExtUtils::MakeMaker','6.30') };
 eval { $v .= pmver('File::Find','any version') };

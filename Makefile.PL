@@ -16,6 +16,7 @@ my %WriteMakefileArgs = (
     'File::Find' => '0',
     'File::Temp' => '0',
     'Test::More' => '0.88',
+    'Test::UseAllModules' => '0',
     'perl' => '5.006'
   },
   'CONFIGURE_REQUIRES' => {
@@ -27,11 +28,12 @@ my %WriteMakefileArgs = (
   'NAME' => 'Dist::Zilla::Plugin::Test::UseAllModules',
   'PREREQ_PM' => {
     'Dist::Zilla::Plugin::InlineFiles' => '0',
+    'Dist::Zilla::Role::PrereqSource' => '0',
     'Moose' => '0',
     'Test::UseAllModules' => '0.13',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.001',
+  'VERSION' => '0.002',
   'test' => {
     'TESTS' => 't/*.t'
   }

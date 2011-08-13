@@ -3,7 +3,7 @@ NAME
     MANIFEST'ed modules pass use_oK()
 
 VERSION
-    version 0.001
+    version 0.002
 
 DESCRIPTION
     This is an extension of Dist::Zilla::Plugin::InlineFiles, providing the
@@ -108,9 +108,9 @@ SUPPORT
     contribute patches, please send me a diff or prod me to pull from your
     repository :)
 
-    <http://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules>
+    <https://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules>
 
-      git clone http://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules
+      git clone https://github.com/russoz/Dist-Zilla-Plugin-Test-UseAllModules.git
 
 AUTHOR
     Alexei Znamensky <russoz@cpan.org>
